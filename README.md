@@ -180,8 +180,10 @@ COPY owners FROM 's3://v/owners.parquet'
 
 ## Airflow DAGS run 
 * grid (success)
+![Airflow-elt_success_grid](./resource/Airflow-elt_success_grid.png)
 
 * graph (flow)
+![Airflow-elt_success_graph_flow](./resource/Airflow-elt_success_graph_flow.png)
 
 
 
