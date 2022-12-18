@@ -30,7 +30,7 @@ cat ~/.aws/credentials
 ```
 ต่อมาสร้าง ไฟล์ settings_dags.py เพิ่มดูตัวอย่างจาก [settings_dags_template.py](./dags/settings_dags_template.py)
 
-#### docker build ให้ Airflow มี s3fs เพื่อต่อกับ AWS S3 file system ได้ 
+### docker build ให้ Airflow มี s3fs เพื่อต่อกับ AWS S3 file system ได้ 
 ```sh
 docker build . --tag extending_airflow
 ```
@@ -40,6 +40,27 @@ docker build . --tag extending_airflow
 ```sh
 docker-compose up -d
 ```
+open browser on port 8080 to access Airflow webservice  
+
+### Add connection profile in Airflow
+- go to tab Admin
+- choose connnection
+- Add new connection  
+
+Connection ID: redshift_petclinic
+Connection Type: Amazon Redshift
+Host: <your-redshift-endpoint> (for example, redshift-cluster-petclinic.cnrhltyzddie.us-east-1.redshift.amazonaws.com)
+Schema: <your-redshift-database> (for example, public, dev, test, prod, etc.)
+Login: <your-redshift-username> not required
+Password: <your-redshift-password> not required
+Port: <your-redshift-port> (for example, 5439)
+Extra: {
+  "aws_access_key_id": "<your-access-key-id>", 
+  "aws_secret_access_key": "<your-secret-access-key>",
+  "aws_session_token":"<your-session_token>", 
+  "region_name": "<your-region-name>"
+}
+- do these prior run elt dags that it required connection profile to check status on new redshift cluster created  
 
 
 ### create AWS S3
@@ -81,6 +102,7 @@ cat ~/.aws/credentials
 ```sh
 docker-compose up
 ```
+
 เข้าไปดู การ transformation data in ipynb notebook ที่ ไฟล์ [Petcliniccleaning](./resource/Petcliniccleaning.ipynb)
 ใน pipeline ทั้งหมดจะไปทำใน ไฟล์ [s3_transform_with_spark.py](./s3_transform_with_spark.py) แทน
 
@@ -91,15 +113,6 @@ docker-compose up
 * get rid some field (column)
 * save to .parquet file in S3 in "Petclinic_cleaned" directory
 * use with Redshift or dbt later
-
-note: Airflow from upload csv to s3, read csv and transform with spark-save new file to s3, redshift มาดึงไปไงดี?  แล้วเอา dbt ครอบตรงการทำ analytic จากโจทย์ เก็บ พวก sql querry
-
-
-
-
-
-
-
 
 
 ## create Redshift cluster
