@@ -29,7 +29,10 @@ mkdir ./plugins
 AIRFLOW_UID=50000
 AIRFLOW_GID=0
 ```
-
+or
+```sh 
+Write-Output "AIRFLOW_UID=1000" > .env
+```
 
 ### Access AWS cli
 * FIrst of all get:
