@@ -18,7 +18,19 @@ Check ดูว่ามี folder dags อยู่แล้วหรือไ�
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
- 
+-for window
+```sh
+mkdir ./dags 
+mkdir ./logs 
+mkdir ./plugins
+```  
+สร้าง .env file ขึ้นมา ถ้ายังไม่มี (directory เดียวกับ docker-compose.yaml) แล้วใส่ค่านี้ลงไป
+```sh
+AIRFLOW_UID=50000
+AIRFLOW_GID=0
+```
+
+
 ### Access AWS cli
 * FIrst of all get:
   - aws_access_key_id = "xxxxxxxxxxxxxxxxxx"
