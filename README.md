@@ -25,9 +25,9 @@ mkdir ./logs
 mkdir ./plugins
 ```  
 สร้าง .env file ขึ้นมา ถ้ายังไม่มี (directory เดียวกับ docker-compose.yaml) แล้วใส่ค่านี้ลงไป
-
+โดยให้เปิด wsl ของ ubuntu แทนเพื่อนเอาค่า $(id -u)
 ```sh 
-Write-Output "AIRFLOW_UID=$PID" > .env
+echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
 
 ### Access AWS cli
