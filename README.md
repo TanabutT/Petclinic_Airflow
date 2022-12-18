@@ -31,7 +31,7 @@ AIRFLOW_GID=0
 ```
 or
 ```sh 
-Write-Output "AIRFLOW_UID=1000" > .env
+Write-Output "AIRFLOW_UID=$PID" > .env
 ```
 
 ### Access AWS cli
