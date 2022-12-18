@@ -46,7 +46,7 @@ open browser on port 8080 to access Airflow webservice
 - go to tab Admin
 - choose connnection
 - Add new connection  
-
+```sh
 Connection ID: redshift_petclinic
 Connection Type: Amazon Redshift
 Host: <your-redshift-endpoint> (for example, redshift-cluster-petclinic.cnrhltyzddie.us-east-1.redshift.amazonaws.com)
@@ -60,6 +60,7 @@ Extra: {
   "aws_session_token":"<your-session_token>", 
   "region_name": "<your-region-name>"
 }
+```
 - do these prior run elt dags that it required connection profile to check status on new redshift cluster created  
 
 
@@ -91,15 +92,10 @@ cat ~/.aws/credentials
 ### Use pandas to transform csv to data and write (save) to new transfromed file
 * [transfromfile](/dags/_read_bucket_landing_transform_to_cleaned.py)
 
-เข้าไปดู การ transformation data in ipynb notebook ที่ ไฟล์ [Petcliniccleaning](./resource/Petcliniccleaning.ipynb)
-ใน pipeline ทั้งหมดจะไปทำใน ไฟล์ [s3_transform_with_spark.py](./s3_transform_with_spark.py) แทน
-
-* Use jupyter lab to EDA and clean some raw csv file with spark (go see ipynb notebook [Petcliniccleaning.ipynb](./Petcliniccleaning.ipynb))  
-
 ก่อนทำการ read_csv การใช้ path ชี้ไปที่ s3 ต้องใช้ แบบนี้ มีตัว "a" หลัง s3  เช่น "s3a://petclinic13/PetClinic_landing/P9-Pets.csv"
 * Join table or just clean ค่อยใช้ dbt ครอบแล้วjoin sql เอาจะได้เห็น lineage graph
 * get rid some field (column)
-* save to .parquet file in S3 in "Petclinic_cleaned" directory
+* save to file in S3 in "Petclinic_cleaned" directory
 * use with Redshift or dbt later
 
 
