@@ -32,7 +32,7 @@ cat ~/.aws/credentials
 
 #### docker build ให้ Airflow มี s3fs เพื่อต่อกับ AWS S3 file system ได้ 
 ```sh
-docker build . -tag extending_airflow
+docker build . --tag extending_airflow
 ```
 
 หลังจากนั้นให้รัน
