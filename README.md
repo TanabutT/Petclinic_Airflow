@@ -61,6 +61,7 @@ Extra: {
   "region_name": "<your-region-name>"
 }
 ```
+![connection profile in Airflow](/resource/)
 - do these prior run elt dags that it required connection profile to check status on new redshift cluster created  
 
 
@@ -177,6 +178,9 @@ COPY owners FROM 's3://v/owners.parquet'
 
 ![cluster-loaded with table from parquet file in S3](./resource/drop-create-loadinto-cluster.png)
 
+## Airflow DAGS run 
+* grid (success)
+* graph (flow)
 
 
 
