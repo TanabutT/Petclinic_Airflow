@@ -13,13 +13,21 @@ pip install -r requirements.txt
 ## Creating and Scheduling Data Pipelines
 
 ถ้าใช้งานระบบที่เป็น Linux ให้เรารันคำสั่งด้านล่างนี้ก่อน
-
+Check ดูว่ามี folder dags อยู่แล้วหรือไม่ ถ้าไม่มีรัน 
 ```sh
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
-แต่ถ้า มี folder dags อยู่แล้ว ไม่ต้องรัน  
-
+ 
+### Access AWS cli
+* FIrst of all get:
+  - aws_access_key_id = "xxxxxxxxxxxxxxxxxx"
+  - aws_secret_access_key = "xxxxxxxxxxxxxxxxxx"
+  - aws_session_token = "xxxxxxxxxxxxxxxxxx"
+with the command here
+```sh 
+cat ~/.aws/credentials
+```
 ต่อมาสร้าง ไฟล์ settings_dags.py เพิ่มดูตัวอย่างจาก [settings_dags_template.py](./dags/settings_dags_template.py)
 
 #### docker build ให้ Airflow มี s3fs เพื่อต่อกับ AWS S3 file system ได้ 
@@ -32,15 +40,7 @@ docker build . -tag extending_airflow
 ```sh
 docker-compose up -d
 ```
-### Access AWS cli
-* FIrst of all get:
-  - aws_access_key_id = "xxxxxxxxxxxxxxxxxx"
-  - aws_secret_access_key = "xxxxxxxxxxxxxxxxxx"
-  - aws_session_token = "xxxxxxxxxxxxxxxxxx"
-with the command here
-```sh 
-cat ~/.aws/credentials
-```
+
 
 ### create AWS S3
 
