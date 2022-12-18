@@ -61,7 +61,7 @@ Extra: {
   "region_name": "<your-region-name>"
 }
 ```
-![connection profile in Airflow](/resource/)
+![connection profile in Airflow](/resource/Airflow-Admin-connection-profile.png)
 - do these prior run elt dags that it required connection profile to check status on new redshift cluster created  
 
 
