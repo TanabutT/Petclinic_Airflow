@@ -25,11 +25,7 @@ mkdir ./logs
 mkdir ./plugins
 ```  
 สร้าง .env file ขึ้นมา ถ้ายังไม่มี (directory เดียวกับ docker-compose.yaml) แล้วใส่ค่านี้ลงไป
-```sh
-AIRFLOW_UID=50000
-AIRFLOW_GID=0
-```
-or
+
 ```sh 
 Write-Output "AIRFLOW_UID=$PID" > .env
 ```
