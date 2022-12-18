@@ -18,6 +18,10 @@ pip install -r requirements.txt
 mkdir -p ./dags ./logs ./plugins
 echo -e "AIRFLOW_UID=$(id -u)" > .env
 ```
+แต่ถ้า มี folder dags อยู่แล้ว ไม่ต้องรัน  
+
+ต่อมาสร้าง ไฟล์ settings_dags.py เพิ่มดูตัวอย่างจาก [settings_dags_template.py](./dags/settings_dags_template.py)
+
 
 หลังจากนั้นให้รัน
 
