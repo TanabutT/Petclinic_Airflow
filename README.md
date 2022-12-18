@@ -62,7 +62,9 @@ Extra: {
 }
 ```
 ![connection profile in Airflow](/resource/Airflow-Admin-connection-profile.png)
-- do these prior run elt dags that it required connection profile to check status on new redshift cluster created  
+
+### trigger DAG in Airflow webbrower
+- Make sure do above steb (Admins add connection profile) required to run elt dags that it required connection profile to check status on new redshift cluster created  
 
 
 ### create AWS S3
