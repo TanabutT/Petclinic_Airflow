@@ -59,25 +59,29 @@ load_owners = """COPY %s FROM 's3://petclinic13/cleaned_zone_parquet/owners.csv'
 	ACCESS_KEY_ID '%s'
 	SECRET_ACCESS_KEY '%s'
 	SESSION_TOKEN '%s'
-	FORMAT AS csv""" % ( 'owners', aws_access_key_id , aws_secret_access_key , aws_session_token)
+	FORMAT AS csv
+    IGNOREHEADER 1""" % ( 'owners', aws_access_key_id , aws_secret_access_key , aws_session_token)
 
 load_phistory = """COPY %s FROM 's3://petclinic13/cleaned_zone_parquet/phistory.csv'
 	ACCESS_KEY_ID '%s'
 	SECRET_ACCESS_KEY '%s'
 	SESSION_TOKEN '%s'
-	FORMAT AS csv""" % ( 'phistory', aws_access_key_id , aws_secret_access_key , aws_session_token)
+	FORMAT AS csv
+    IGNOREHEADER 1""" % ( 'phistory', aws_access_key_id , aws_secret_access_key , aws_session_token)
 
 load_pdetail = """COPY %s FROM 's3://petclinic13/cleaned_zone_parquet/pdetail.csv'
 	ACCESS_KEY_ID '%s'
 	SECRET_ACCESS_KEY '%s'
 	SESSION_TOKEN '%s'
-	FORMAT AS csv""" % ( 'pdetail', aws_access_key_id , aws_secret_access_key , aws_session_token)
+	FORMAT AS csv
+    IGNOREHEADER 1""" % ( 'pdetail', aws_access_key_id , aws_secret_access_key , aws_session_token)
 
 load_pets = """COPY %s FROM 's3://petclinic13/cleaned_zone_parquet/pets.csv'
 	ACCESS_KEY_ID '%s'
 	SECRET_ACCESS_KEY '%s'
 	SESSION_TOKEN '%s'
-	FORMAT AS csv""" % ( 'pets', aws_access_key_id , aws_secret_access_key , aws_session_token)
+	FORMAT AS csv
+    IGNOREHEADER 1""" % ( 'pets', aws_access_key_id , aws_secret_access_key , aws_session_token)
 
 
 # QUERY LISTS
