@@ -22,6 +22,10 @@ echo -e "AIRFLOW_UID=$(id -u)" > .env
 
 ต่อมาสร้าง ไฟล์ settings_dags.py เพิ่มดูตัวอย่างจาก [settings_dags_template.py](./dags/settings_dags_template.py)
 
+#### docker build ให้ Airflow มี s3fs เพื่อต่อกับ AWS S3 file system ได้ 
+```sh
+docker build . -tag extending_airflow
+```
 
 หลังจากนั้นให้รัน
 
