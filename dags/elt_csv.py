@@ -5,7 +5,7 @@ from _get_files import _get_files
 from _con_upload_to_s3 import _con_upload_to_s3
 from _create_Redshift import _create_Redshift
 from _create_tables_process import _create_tables_process
-from _read_bucket_landing_transform_to_cleaned_parquet import _read_bucket_landing_transform_to_cleaned_parquet
+from _read_bucket_landing_transform_to_cleaned import _read_bucket_landing_transform_to_cleaned
 from _describe_cluster import _describe_cluster
 from _insert_data import _insert_data
 from _insert_data_parquet import _insert_data_parquet
@@ -45,9 +45,9 @@ with DAG (
         python_callable=_con_upload_to_s3,
     )
 
-    read_transform_parquet = PythonOperator(
-        task_id="read_bucket_landing_transform_to_cleaned_parquet",
-        python_callable=_read_bucket_landing_transform_to_cleaned_parquet,
+    read_transform = PythonOperator(
+        task_id="read_bucket_landing_transform_to_cleaned",
+        python_callable=_read_bucket_landing_transform_to_cleaned,
     )
 
     describe_cluster = PythonOperator(
@@ -75,5 +75,5 @@ with DAG (
     )
 
       
-    get_files >> con_upload_to_s3 >> read_transform_parquet >> wait_for_cluster >> describe_cluster >> create_tables_process >> insert_data
+    get_files >> con_upload_to_s3 >> read_transform >> wait_for_cluster >> describe_cluster >> create_tables_process >> insert_data
     create_Redshift >> wait_for_cluster

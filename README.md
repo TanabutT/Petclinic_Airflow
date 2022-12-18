@@ -88,20 +88,8 @@ cat ~/.aws/credentials
   - ProcedureDetails
   - ProcedureHistory
 
-### Use Spark to transform csv to data and write (save) to new transfromed file
-* cd เข้าไปที่ folder resource ก่อน
-* EDA if use gitpod run this command to allow permission to create file in workspace
-    เพื่อให้เราสามารถสร้างไฟล์ได้จาก Jupyter Lab ให้รันคำสั่งด้านล่างนี้
-
-    ```sh
-    sudo chmod 777 .
-    ```
-    แล้วค่อยรัน
-
-
-```sh
-docker-compose up
-```
+### Use pandas to transform csv to data and write (save) to new transfromed file
+* [transfromfile](/dags/_read_bucket_landing_transform_to_cleaned.py)
 
 เข้าไปดู การ transformation data in ipynb notebook ที่ ไฟล์ [Petcliniccleaning](./resource/Petcliniccleaning.ipynb)
 ใน pipeline ทั้งหมดจะไปทำใน ไฟล์ [s3_transform_with_spark.py](./s3_transform_with_spark.py) แทน

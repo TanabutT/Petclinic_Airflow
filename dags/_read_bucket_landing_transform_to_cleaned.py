@@ -3,7 +3,7 @@ import os
 import pandas as pd
 from settings_dags import aws_access_key_id , aws_secret_access_key , aws_session_token
 
-def _read_bucket_landing_transform_to_cleaned_parquet(): 
+def _read_bucket_landing_transform_to_cleaned(): 
 
     AWS_S3_BUCKET= "petclinic13/PetClinic_landing"
     AWS_S3_BUCKET_cleaned = "petclinic13/cleaned_zone_parquet"
