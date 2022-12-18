@@ -36,8 +36,7 @@ with DAG (
 
     create_Redshift = PythonOperator(
         task_id="create_Redshift",
-        python_callable=_create_Redshift,
-        
+        python_callable=_create_Redshift,        
     )
   
     con_upload_to_s3 = PythonOperator(
