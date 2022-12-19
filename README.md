@@ -192,7 +192,7 @@ COPY owners FROM 's3://v/P9-Owners.csv'
 	SECRET_ACCESS_KEY ''
 	SESSION_TOKEN ''
 	CSV
-  IGNOREHEADER 1
+    IGNOREHEADER 1	
 	REGION ''
 ```
 
