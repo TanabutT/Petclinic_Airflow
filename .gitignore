@@ -1,5 +1,6 @@
-/ENV
-settings.py
-/logs
+ENV
+logs
 plugins
-dags
+*.pyc
+*.pyo
+__pycache__/
