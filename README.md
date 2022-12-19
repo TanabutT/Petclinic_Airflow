@@ -78,6 +78,16 @@ Extra: ###must be json format only####
 ### trigger DAG in Airflow webbrower
 - Make sure do above steb (Admins add connection profile) required to run elt dags that it required connection profile to check status on new redshift cluster created  
 
+### Note on .gitignore
+Notice the modified in your git status output. That means you already added and commited the __pycache__.
+```sh
+git rm -r <PATH>
+```  
+it, commit and it should start to be properly ignored.
+
+It is not a bad idea to start with official .gitignores from the beginning and extend those: https://github.com/github/gitignore
+
+
 
 ### create AWS S3
 

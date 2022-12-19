@@ -1,6 +1,7 @@
+__pycache__
+.ipynb_checkpoints
+
 ENV
 logs
 plugins
-*.pyc
-*.pyo
-__pycache__/
+
