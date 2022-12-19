@@ -20,7 +20,7 @@ from airflow.providers.amazon.aws.sensors.redshift_cluster import RedshiftCluste
 
 with DAG (
     "elt_csv",
-    start_date=timezone.datetime(2023, 12, 16),
+    start_date=timezone.datetime(2022, 12, 19),
     schedule="@daily", # use cron " * * * * *"
     tags=["workshop"],
     catchup=False,

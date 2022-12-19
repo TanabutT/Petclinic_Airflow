@@ -35,7 +35,7 @@ pdetail_table_create = """CREATE TABLE IF NOT EXISTS pdetail
     ,ProcedureSubcode text
     ,Description text
     ,Price text 
-    
+    ,PRIMARY KEY (ProcedureType, ProcedureSubcode)
 );
 """
 
