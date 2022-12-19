@@ -180,13 +180,19 @@ CREATE TABLE IF NOT EXISTS owners (
   ,ZipCode text
   )
 ```
-load owner table with COPY command in aws via boto3 connect using pycopg2 or redshift_connector? csv file
+
+### !important for csv file IGNOREHEADER 1 is a must  
+- make sure it cause error in spectrum when load data to table the datatyep will mixed-up and throw error  
+- put <b>IGNOREHEADER 1</b> in the end example below  
+- for parquet file header will not load by defualt (and no *arg in PARQUET COPY command in AWS)
+load owner table with COPY command in aws via boto3 connect using pycopg2 or redshift_connector csv file
 ```sh
 COPY owners FROM 's3://v/P9-Owners.csv'
 	ACCESS_KEY_ID ''
 	SECRET_ACCESS_KEY ''
 	SESSION_TOKEN ''
 	CSV
+  IGNOREHEADER 1
 	REGION ''
 ```
 
