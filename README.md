@@ -188,12 +188,12 @@ CREATE TABLE IF NOT EXISTS owners (
 load owner table with COPY command in aws via boto3 connect using pycopg2 or redshift_connector csv file
 ```sh
 COPY owners FROM 's3://v/P9-Owners.csv'
-	ACCESS_KEY_ID ''
-	SECRET_ACCESS_KEY ''
-	SESSION_TOKEN ''
-	CSV
-    IGNOREHEADER 1	
-	REGION ''
+ACCESS_KEY_ID ''
+SECRET_ACCESS_KEY ''
+SESSION_TOKEN ''
+CSV
+IGNOREHEADER 1	
+REGION ''
 ```
 
 load owner table with COPY command in aws via boto3 connect using pycopg2 or redshift_connector? parquet file
