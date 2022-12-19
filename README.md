@@ -65,12 +65,13 @@ Schema: <your-redshift-database> (for example, public, dev, test, prod, etc.)
 Login: <your-redshift-username> not required
 Password: <your-redshift-password> not required
 Port: <your-redshift-port> (for example, 5439)
-Extra: {
-  "aws_access_key_id": "<your-access-key-id>", 
-  "aws_secret_access_key": "<your-secret-access-key>",
-  "aws_session_token":"<your-session_token>", 
-  "region_name": "<your-region-name>"
-}
+Extra: ###must be json format only####
+    {
+  "aws_access_key_id": "youraccesskeyid", 
+  "aws_secret_access_key": "yoursecretaccesskey",
+  "aws_session_token":"yoursessiontoken", 
+  "region_name": "us-east-1"
+  }
 ```
 ![connection profile in Airflow](/resource/Airflow-Admin-connection-profile.png)
 
