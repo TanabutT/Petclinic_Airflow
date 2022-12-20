@@ -1,6 +1,6 @@
 
 # Capstone Project Data Engineer
-
+![petclinic](resource/teckstackused-petclinic_bruce.png)
 ## Getting Started linux
 ENV is name of virtual environment can name up to user 
 example CUTECAT then 
