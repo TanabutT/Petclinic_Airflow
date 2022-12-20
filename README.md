@@ -299,12 +299,6 @@ dbt docs serve --port 8089
 
 
 
-
-
-
-
-
-
 To close all service
 - S3 empty bucket
 - Delete S3 bucket
@@ -313,7 +307,3 @@ To close all service
 
 
 
-
-## watch cost explorer
-
-![cost](resource/redshift_cost1.jpg)
