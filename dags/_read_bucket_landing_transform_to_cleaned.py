@@ -79,7 +79,7 @@ def _read_bucket_landing_transform_to_cleaned():
         },index=False)
     
     # datetime issue fixed before write back into s3 bucker cleaned zone
-    phistory_df = 
+    phistory_df['Date'] = phistory_df['Date'].astype('datetime64[ns]')
 
     phistory_df.to_csv(f"s3://{AWS_S3_BUCKET_cleaned}/{phistory_key_pq}",
         storage_options={
