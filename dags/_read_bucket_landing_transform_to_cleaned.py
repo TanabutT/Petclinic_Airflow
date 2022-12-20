@@ -77,6 +77,10 @@ def _read_bucket_landing_transform_to_cleaned():
             "secret": aws_secret_access_key,
             "token": aws_session_token,
         },index=False)
+    
+    # datetime issue fixed before write back into s3 bucker cleaned zone
+    phistory_df = 
+
     phistory_df.to_csv(f"s3://{AWS_S3_BUCKET_cleaned}/{phistory_key_pq}",
         storage_options={
             "key": aws_access_key_id,
